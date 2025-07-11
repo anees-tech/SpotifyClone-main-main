@@ -1,0 +1,142 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #121212;
+    color: white;
+  }
+  
+  .admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .admin-content {
+    margin-top: 2rem;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    list-style: none  ;
+  }
+  
+  .stat-card {
+    background-color: #1e1e1e;
+    list-style: none  ;
+    border-radius: 8px; 
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-card h3 {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .stat-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #1db954;
+    opacity: 0.7;
+  }
+  
+  .recent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .recent-section {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recent-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1db954;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  
+  .admin-table th {
+    font-weight: 600;
+    color: #b3b3b3;
+  }
+  
+  .admin-table tr:hover {
+    background-color: #252525;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 2rem;
+    color: #b3b3b3;
+  }
+  
+  .admin-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #1db954;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-main {
+      padding: 1rem;
+    }
+  
+    .recent-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

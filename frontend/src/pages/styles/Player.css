@@ -1,0 +1,155 @@
+.player {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 180px;
+  max-width: 30%;
+  cursor: pointer;
+}
+
+.song-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.song-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.song-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: 0.75rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-main {
+  flex: 1;
+  max-width: 722px;
+  width: 40%;
+}
+
+/* Custom styles for react-h5-audio-player */
+.rhap_container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.rhap_progress-section {
+  margin: 0 !important;
+}
+
+.rhap_controls-section {
+  margin: 0 !important;
+}
+
+.rhap_main-controls-button {
+  color: white !important;
+}
+
+.rhap_play-pause-button {
+  font-size: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.rhap_volume-button {
+  color: white !important;
+}
+
+.rhap_volume-bar {
+  background-color: #535353 !important;
+}
+
+.rhap_volume-indicator {
+  background-color: white !important;
+}
+
+.rhap_progress-bar {
+  background-color: #535353 !important;
+}
+
+.rhap_progress-indicator {
+  background-color: white !important;
+}
+
+.rhap_progress-filled {
+  background-color: #1db954 !important;
+}
+
+.rhap_time {
+  color: #b3b3b3 !important;
+  font-size: 0.6875rem !important;
+}
+
+.player-actions {
+  min-width: 180px;
+  max-width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.player-placeholder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .player {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0 0.5rem;
+  }
+
+  .song-info {
+    min-width: auto;
+    max-width: 40%;
+  }
+
+  .song-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .player-main {
+    width: 50%;
+  }
+
+  .player-actions {
+    display: none;
+  }
+}

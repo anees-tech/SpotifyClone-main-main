@@ -1,0 +1,113 @@
+.users-table-container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  
+  .users-table th {
+    background-color: #252525;
+    font-weight: 600;
+    color: #b3b3b3;
+  }
+  
+  .users-table tr:hover {
+    background-color: #252525;
+  }
+  
+  .role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 500px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .role-badge.admin {
+    background-color: #1db954;
+    color: white;
+  }
+  
+  .role-badge.user {
+    background-color: #333;
+    color: #b3b3b3;
+  }
+  
+  .role-toggle-button {
+    background-color: transparent;
+    border: 1px solid #1db954;
+    color: #1db954;
+    padding: 0.5rem 0.75rem;
+    border-radius: 500px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .role-toggle-button:hover {
+    background-color: #1db954;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .users-table-container {
+      overflow-x: auto;
+    }
+  
+    .users-table th,
+    .users-table td {
+      padding: 0.75rem 0.5rem;
+    }
+  
+    .role-toggle-button {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  th.actions{
+    text-align: center;
+  }
+.btn-td{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+ }
+  .delete-button {
+    background-color: #960b19;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    padding: 8px 12px;
+    margin-left: 18px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s; 
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    align-items: center;
+  }
+
+  .delete-button:hover {
+    background-color: #d31326;
+  }
+
+  .delete-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+  }

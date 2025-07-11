@@ -1,0 +1,59 @@
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+  }
+  
+  .admin-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .admin-user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1db954;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+  }
+  
+  .admin-user-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-user-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .admin-user-role {
+    font-size: 0.75rem;
+    color: #1db954;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .admin-user-info {
+      align-self: flex-end;
+    }
+  }
+  

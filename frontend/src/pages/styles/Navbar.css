@@ -1,0 +1,162 @@
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.navbar-logo img {
+  height: 40px;
+}
+
+.navbar-search {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 2rem;
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #121212;
+}
+
+.search-input-container input {
+  width: 100%;
+  padding: 0.6rem 2.5rem;
+  border-radius: 500px;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.search-input-container input:focus {
+  outline: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.signup-button {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 1.5rem;
+  border-radius: 500px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.signup-button:hover {
+  transform: scale(1.05);
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #535353;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.mobile-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logout {
+  color: #ff3b30; /* Red color for logout to make it stand out */
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.logout:hover {
+  color: white; /* Change text color on hover */
+  transform: scale(1.05); /* Slight scale on hover for interactivity */
+}
+.mobile-link.signup {
+  color: #1db954;
+}
+
+@media (max-width: 992px) {
+  .navbar-search {
+    max-width: 300px;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-search,
+  .navbar-links {
+    display: none;
+  }
+  .navbar-search1 {
+    flex: 1;
+    max-width: 400px;
+    margin: 1rem 2rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}

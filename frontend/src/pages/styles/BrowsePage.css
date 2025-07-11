@@ -1,0 +1,70 @@
+.browse-page {
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+.browse-content {
+  padding: 2rem 0;
+}
+
+.browse-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.browse-categories-section,
+.featured-playlists-section {
+  margin-bottom: 3rem;
+}
+
+.browse-categories-section h2,
+.featured-playlists-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: white;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .category-card {
+    height: 150px;
+    padding: 1rem;
+  }
+
+  .category-card h3 {
+    font-size: 1.25rem;
+  }
+}

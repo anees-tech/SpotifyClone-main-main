@@ -1,0 +1,75 @@
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .playlist-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .playlist-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .playlist-card-image {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .playlist-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .playlist-card-content {
+    padding: 1rem;
+  }
+  
+  .playlist-card-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .playlist-description {
+    font-size: 0.875rem;
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .playlist-songs {
+    font-size: 0.75rem;
+    color: #1db954;
+  }
+  
+  .playlist-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem 1rem;
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .playlists-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+  
