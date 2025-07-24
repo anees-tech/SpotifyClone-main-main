@@ -65,16 +65,17 @@ export const AuthProvider = ({ children }) => {
         password,
       });
 
-      if (response.data.success) {
+      if (response.data.user && response.data.token) {
         // Save user ID and data to localStorage
         localStorage.setItem("userId", response.data.user.id);
         localStorage.setItem("userData", JSON.stringify(response.data.user));
 
         setIsAuthenticated(true);
         setUser(response.data.user);
-        return { success: true, isAdmin: response.data.user.isAdmin };
+
+        return { success: true, user: response.data.user, isAdmin: response.data.user.isAdmin };
       }
-      return { success: false, message: response.data.message };
+      return { success: false, message: "Login failed" };
     } catch (error) {
       console.error("Login error:", error);
       return {

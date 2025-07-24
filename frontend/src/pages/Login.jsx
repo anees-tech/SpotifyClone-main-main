@@ -22,7 +22,7 @@ function Login() {
     e.preventDefault()
     setError("") // Clear previous errors
     setLoading(true)
-
+    console.log("Form data:", formData)
     if (!formData.email || !formData.password) {
       setError("Please fill in all fields")
       setLoading(false)
@@ -31,16 +31,16 @@ function Login() {
 
     try {
       const result = await handleLogin(formData.email, formData.password)
-
-      if (result.success) {
+      console.log("Login result:", result)
+      if (result.user) {
         // Redirect based on user role
-        if (result.isAdmin) {
+        if (result.user.isAdmin) {
           navigate("/admin")
         } else {
           navigate("/")
         }
       } else {
-        setError(result.message || "Login failed")
+        setError("Invalid email or password")
       }
     } catch (err) {
       setError("An error occurred during login")
@@ -82,7 +82,7 @@ function Login() {
               required
             />
           </div>
-          
+           {/* <h1>alkghaksgh klgikgj</h1> */}
           {/* Add forgot password link */}
           <div className="forgot-password-link">
             <Link to="/forgot-password">Forgot your password?</Link>

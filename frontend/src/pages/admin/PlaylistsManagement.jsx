@@ -103,6 +103,7 @@ function PlaylistsManagement() {
         playlistData.append("name", formData.name)
         playlistData.append("description", formData.description)
         playlistData.append("isPublic", formData.isPublic)
+        playlistData.append("isFeatured", formData.isFeatured)
 
         // Add songs as JSON string
         if (formData.songs) {
@@ -132,6 +133,7 @@ function PlaylistsManagement() {
         playlistData.append("name", formData.name)
         playlistData.append("description", formData.description)
         playlistData.append("isPublic", formData.isPublic)
+        playlistData.append("isFeatured", formData.isFeatured)
 
         // Add songs as JSON string
         if (formData.songs) {

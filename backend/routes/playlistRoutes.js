@@ -4,11 +4,14 @@ const Playlist = require("../models/Playlist")
 const auth = require("../middleware/auth")
 
 // @route   GET /api/playlists
-// @desc    Get all public playlists
+// @desc    Get all featured playlists (admin-created playlists marked as featured)
 // @access  Public
 router.get("/", async (req, res) => {
   try {
-    const playlists = await Playlist.find({ isPublic: true })
+    const playlists = await Playlist.find({ 
+      isPublic: true, 
+      isFeatured: true 
+    })
       .sort({ createdAt: -1 })
       .populate("songs", "title artist album coverUrl")
 

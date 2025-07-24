@@ -16,16 +16,26 @@
     gap: 1.5rem;
   }
   
-  .checkbox-group {
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .checkbox-group input[type="checkbox"] {
-    margin-right: 0.5rem;
-  }
-  
-  .songs-search {
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.checkbox-group small {
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  margin-left: 1.5rem;
+}  .songs-search {
     position: relative;
     margin-bottom: 1rem;
   }

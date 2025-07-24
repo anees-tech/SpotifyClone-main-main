@@ -171,6 +171,7 @@ router.post(
         songs: songs ? JSON.parse(songs) : [],
         createdBy: req.user.id,
         isPublic: isPublic === "true",
+        isFeatured: false, // User-created playlists are never featured
       })
 
       await newPlaylist.save()
@@ -189,11 +190,14 @@ router.post(
 )
 
 // @route   GET /api/user/playlists
-// @desc    Get user's playlists
+// @desc    Get user's playlists (excluding featured playlists)
 // @access  Private
 router.get("/playlists", auth, async (req, res) => {
   try {
-    const playlists = await Playlist.find({ createdBy: req.user.id })
+    const playlists = await Playlist.find({ 
+      createdBy: req.user.id,
+      isFeatured: { $ne: true } // Exclude featured playlists from user's playlists
+    })
       .sort({ createdAt: -1 })
       .populate("songs", "title artist album coverUrl duration audioUrl")
 

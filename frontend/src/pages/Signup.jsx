@@ -29,7 +29,7 @@ function Signup() {
     setError("")
     setLoading(true)
 
-    if (!formData.email ||  !formData.password || !formData.password || !formData.name ) {
+    if (!formData.email || !formData.password || !formData.confirmPassword || !formData.name ) {
       setError("Please fill in all required fields")
       setLoading(false)
       return
@@ -45,12 +45,10 @@ function Signup() {
       const response = await axios.post("http://localhost:5000/api/auth/register", {
         name: formData.name,
         email: formData.email,
-       // musictaste:formData.musictaste,
         password: formData.password,
-       // gender: formData.gender, // Include gender
       })
 
-      if (response.data.success) {
+      if (response.data.user) {
         localStorage.setItem("userId", response.data.user.id)
         localStorage.setItem("userData", JSON.stringify(response.data.user))
         navigate("/")

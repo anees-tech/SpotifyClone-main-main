@@ -8,6 +8,7 @@ function PlaylistForm({ playlist, songs, onSubmit, onCancel }) {
     name: "",
     description: "",
     isPublic: true,
+    isFeatured: false, // Added featured flag
     songs: [],
     cover: null,
   })
@@ -21,6 +22,7 @@ function PlaylistForm({ playlist, songs, onSubmit, onCancel }) {
         name: playlist.name || "",
         description: playlist.description || "",
         isPublic: playlist.isPublic !== undefined ? playlist.isPublic : true,
+        isFeatured: playlist.isFeatured !== undefined ? playlist.isFeatured : false,
         songs: playlist.songs?.map((song) => (typeof song === "object" ? song._id : song)) || [],
         cover: null, // We don't set the actual file here, just show the preview
       })
@@ -139,6 +141,14 @@ function PlaylistForm({ playlist, songs, onSubmit, onCancel }) {
           <label>
             <input type="checkbox" name="isPublic" checked={formData.isPublic} onChange={handleChange} />
             Make this playlist public
+          </label>
+        </div>
+
+        <div className="form-group checkbox-group">
+          <label>
+            <input type="checkbox" name="isFeatured" checked={formData.isFeatured} onChange={handleChange} />
+            Mark as featured playlist
+            <small>Featured playlists appear in the "Featured Playlists" section for all users</small>
           </label>
         </div>
 

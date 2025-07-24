@@ -7,6 +7,7 @@ const PlaylistSchema = new mongoose.Schema({
   songs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Song" }],
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   isPublic: { type: Boolean, default: true },
+  isFeatured: { type: Boolean, default: false }, // Added field to distinguish featured playlists
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 })

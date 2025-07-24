@@ -322,7 +322,7 @@ router.post("/playlists", adminAuth, uploadImage.single("cover"), async (req, re
   try {
     const user = req.user
 
-    const { name, description, songs, isPublic } = req.body
+    const { name, description, songs, isPublic, isFeatured } = req.body
 
     if (!req.file) {
       return res.status(400).json({ message: "Cover image is required" })
@@ -337,6 +337,7 @@ router.post("/playlists", adminAuth, uploadImage.single("cover"), async (req, re
       songs: songs ? JSON.parse(songs) : [],
       createdBy: user.id,
       isPublic: isPublic === "true",
+      isFeatured: isFeatured === "true", // Set featured flag for admin playlists
     })
 
     await newPlaylist.save()
@@ -406,12 +407,13 @@ router.put(
         return res.status(404).json({ message: "Playlist not found" })
       }
 
-      const { name, description, songs, isPublic } = req.body
+      const { name, description, songs, isPublic, isFeatured } = req.body
 
       if (name) playlist.name = name
       if (description) playlist.description = description
       if (songs) playlist.songs = JSON.parse(songs)
       if (isPublic !== undefined) playlist.isPublic = isPublic === "true"
+      if (isFeatured !== undefined) playlist.isFeatured = isFeatured === "true"
 
       // Handle cover image update
       if (req.file) {
